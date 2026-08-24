@@ -1,0 +1,48 @@
+[package]
+name = "voice-gateway"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+voice-orchestrator = { path = "../voice-orchestrator" }
+voice-protocols = { path = "../voice-protocols" }
+voice-transport = { path = "../voice-transport" }
+voice-transport-telnyx = { path = "../voice-transport-telnyx" }
+
+tokio.workspace = true
+tokio-tungstenite.workspace = true
+axum.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+bytes.workspace = true
+flume.workspace = true
+futures.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+config.workspace = true
+uuid.workspace = true
+dashmap.workspace = true
+tokio-util = { version = "0.7", features = ["rt", "io"] }
+base64.workspace = true
+dotenvy = "0.15"
+hmac.workspace = true
+sha2 = "0.10"
+hex = "0.4"
+subtle = "2.6"
+serde_urlencoded = "0.7"
+reqwest = { version = "0.12", features = ["json"] }
+
+tower.workspace = true
+tower-http.workspace = true
+hyper.workspace = true
+
+# Metrics
+metrics.workspace = true
+metrics-exporter-prometheus.workspace = true
+
+# TLS
+rustls.workspace = true

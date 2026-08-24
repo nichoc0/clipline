@@ -1,0 +1,16 @@
+[package]
+name = "audio-utils"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+bytes.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+# Audio processing
+rubato.workspace = true
+webrtc-vad.workspace = true
+audio-codec-algorithms.workspace = true

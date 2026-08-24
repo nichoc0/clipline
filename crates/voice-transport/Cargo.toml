@@ -1,0 +1,24 @@
+[package]
+name = "voice-transport"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Carrier-agnostic transport trait for voice-agent ingress (Telnyx, Twilio, SIP, WebRTC). Bridges any wire format to PCM16 @ 8 kHz consumed by voice-orchestrator."
+
+[dependencies]
+voice-protocols = { path = "../voice-protocols" }
+audio-utils = { path = "../audio-utils" }
+tokio = { workspace = true }
+async-trait = { workspace = true }
+bytes = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+uuid = { workspace = true }
+tokio-util = { version = "0.7", features = ["rt"] }
+dashmap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread", "test-util"] }

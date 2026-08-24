@@ -1,0 +1,56 @@
+[workspace]
+members = [
+    "crates/voice-gateway",
+    "crates/voice-orchestrator",
+    "crates/voice-transport-telnyx",
+    "crates/audio-utils",
+    "crates/voice-protocols",
+    "crates/voice-transport",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["nichoc0"]
+
+[workspace.dependencies]
+tokio = { version = "1.41", features = ["full"] }
+tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+bytes = { version = "1.7", features = ["serde"] }
+futures = "0.3"
+reqwest = { version = "0.12", features = ["stream", "json", "native-tls"] }
+axum = { version = "0.7", features = ["ws"] }
+hyper = "1.5"
+anyhow = "1.0"
+thiserror = "2.0"
+config = "0.14"
+uuid = { version = "1.11", features = ["v4", "serde"] }
+async-trait = "0.1"
+base64 = "0.22"
+hmac = "0.12"
+dashmap = "6.1"
+flume = "0.11"
+parking_lot = "0.12"
+tower = "0.5"
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+chrono = { version = "0.4", features = ["serde"] }
+rubato = "0.16"
+webrtc-vad = "0.4"
+audio-codec-algorithms = "0.7"
+deepgram = "0.10"
+async-openai = "0.20"
+reqwest-eventsource = "0.6"
+rustls = { version = "0.23", features = ["aws-lc-rs"] }
+metrics = "0.23"
+metrics-exporter-prometheus = "0.16"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

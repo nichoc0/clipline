@@ -1,0 +1,52 @@
+[server]
+host = "0.0.0.0"
+port = 8080
+max_connections = 100
+
+[telephony]
+provider = "telnyx"
+
+[telnyx]
+api_key = ""
+connection_id = ""
+signing_secret = ""
+public_key = ""
+webhook_path = "/telnyx/voice"
+status_path = "/telnyx/status"
+media_stream_path = "/telnyx/media"
+public_base_url = ""
+public_ws_url = ""
+
+[stt]
+provider = "deepgram"
+model = "nova-2"
+language = "en-US"
+interim_results = true
+punctuate = true
+diarize = false
+smart_format = true
+
+[tts]
+provider = "elevenlabs"
+voice = "21m00Tcm4TlvDq8ikWAM"
+model = "eleven_turbo_v2_5"
+optimize_streaming_latency = 4
+
+[llm]
+provider = "repl"
+model = "claude-haiku-4-5-20251001"
+temperature = 0.7
+max_tokens = 150
+
+[audio]
+sample_rate = 8000
+encoding = "mulaw"
+channels = 1
+chunk_duration_ms = 20
+vad_threshold = 0.5
+silence_duration_ms = 1500
+
+[observability]
+log_level = "info"
+metrics_enabled = true
+metrics_port = 9090
